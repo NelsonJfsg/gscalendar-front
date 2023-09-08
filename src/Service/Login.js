@@ -1,9 +1,11 @@
 import Axios  from "axios"
 
-export const getAllUser = () => {
+export const getAllUser = async () => {
 
-    var value = Axios.get("http://localhost:3000/user");
-    value.then(message => console.log(message.data));
+    //List
+    var value = await Axios.get("http://localhost:3000/user");
+    return value;
+
 }
 
 export const addUser = (firstName, lastName, email, password) => {
@@ -20,5 +22,6 @@ export const addUser = (firstName, lastName, email, password) => {
             }
         
         );
-
+        
+    
 }
