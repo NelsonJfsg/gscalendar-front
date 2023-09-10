@@ -7,7 +7,8 @@ export const Signup = () => {
 
 
     const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
+    const [fatherSurname, setFatherSurname] = useState("");
+    const [motherSurname, setMotherSurname] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     
@@ -23,8 +24,12 @@ export const Signup = () => {
         setFirstName(event.target.value);
     }
 
-    const handleChangeLastName = (event) => {
-        setLastName(event.target.value);
+    const handleChangeFatherSurname = (event) => {
+        setFatherSurname(event.target.value);
+    }
+
+    const handleChangeMotherSurname = (event) => {
+        setMotherSurname(event.target.value);
     }
 
   return (
@@ -48,11 +53,19 @@ export const Signup = () => {
                     />
                     
                     <Input 
-                        onChange={handleChangeLastName} 
+                        onChange={handleChangeFatherSurname} 
                         prefix={<UserOutlined/>} 
-                        placeholder='Last name...'
-                        value={lastName}
+                        placeholder='Father surname...'
+                        value={fatherSurname}
                     />
+
+                    <Input 
+                        onChange={handleChangeMotherSurname} 
+                        prefix={<UserOutlined/>} 
+                        placeholder='Mother surname...'
+                        value={motherSurname}
+                    />
+                    
                     
                     <Input 
                         onChange={handleChangeEmail} 
@@ -69,7 +82,7 @@ export const Signup = () => {
                         value={password}
                     />
 
-                    <Button onClick={() => {addUser(firstName, lastName, email, password)}}>AddUser</Button>
+                    <Button onClick={() => {addUser(firstName, fatherSurname, motherSurname, email, password)}}>AddUser</Button>
                 </Col>
             </Row>
     
